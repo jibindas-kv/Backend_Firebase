@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "791966809163",
+    "firebase_url": "https://stuydyapp-d4df9-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "stuydyapp-d4df9",
+    "storage_bucket": "stuydyapp-d4df9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791966809163:android:25b584473c50199e7b61ce",
+        "android_client_info": {
+          "package_name": "com.example.firebase_backend"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB293tpoWbwmxf11ik1g1m_RIDuBNCmyBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
