@@ -1,6 +1,5 @@
 import 'package:firebase_backend/Add_And_View/Product_add.dart';
 import 'package:firebase_backend/Add_And_View/Product_view.dart';
-import 'package:firebase_backend/Add_And_View/Product_update.dart';
 import 'package:firebase_backend/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +30,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Product_add()
+      home: Product_view()
     );
   }
 }

@@ -149,6 +149,36 @@ class _Product_addState extends State<Product_add> {
                     ),
                   ),
                 ),
+
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, left: 90, right: 90),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return Product_view();
+                        },
+                      ));
+
+                    },
+                    child: Container(
+                      height: 50,
+                      width: 390,
+                      decoration: BoxDecoration(
+                          color: Colors.blue.shade400,
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Center(
+                          child: Text(
+                            'View Details',
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.black),
+                          )),
+                    ),
+                  ),
+                ),
+
               ],
             ),
           ),
