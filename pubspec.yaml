@@ -39,6 +39,9 @@ dependencies:
   cloud_firestore: ^5.4.2
   snackbar: ^1.0.2
   shared_preferences: ^2.3.2
+  calendar_date_picker2: ^1.1.7
+  intl: ^0.19.0
+  flutter_animated_button: ^2.0.3
 
 dev_dependencies:
   flutter_test:

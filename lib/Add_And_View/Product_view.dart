@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_backend/Add_And_View/Product_add.dart';
+import 'package:firebase_backend/Add_And_View/View_details.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -128,53 +129,63 @@ class _Product_viewState extends State<Product_view> {
                 final product_details = doc.data() as Map<String, dynamic>;
                 return Padding(
                   padding: const EdgeInsets.only(top: 10, left: 15, right: 15),
-                  child: Card(
-                    child: Container(
-                      height: 75,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12.0),
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [Colors.blue.shade400, Colors.green.shade400],
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) {
+                        return View_details(
+                          id:doc.id
+                        );
+                      },));
+                    },
+
+                    child: Card(
+                      child: Container(
+                        height: 75,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12.0),
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [Colors.blue.shade400, Colors.green.shade400],
+                          ),
                         ),
-                      ),
-                      child: ListTile(
-                        title: Text(
-                          "Name : ${product_details["Product_name"] ?? ""}",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w900,
-                              fontSize: 20),
-                        ),
-                        subtitle: Text(
-                          "Details  : ${product_details["Product_discription"] ?? ""}",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15),
-                        ),
-                        trailing: Wrap(children: [
-                          IconButton(
-                              onPressed: () {
-                                _updateProduct(
-                                    doc.id,
-                                    product_details["Product_name"],
-                                    product_details["Product_discription"]);
-                              },
-                              icon: Icon(
-                                CupertinoIcons.pen,
+                        child: ListTile(
+                          title: Text(
+                            "Name : ${product_details["Product_name"] ?? ""}",
+                            style: TextStyle(
                                 color: Colors.black,
-                              )),
-                          IconButton(
-                              onPressed: () {
-                                Delete_product(doc.id);
-                              },
-                              icon: Icon(
-                                CupertinoIcons.delete,
+                                fontWeight: FontWeight.w900,
+                                fontSize: 20),
+                          ),
+                          subtitle: Text(
+                            "Details  : ${product_details["Product_discription"] ?? ""}",
+                            style: TextStyle(
                                 color: Colors.black,
-                              ))
-                        ]),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15),
+                          ),
+                          trailing: Wrap(children: [
+                            IconButton(
+                                onPressed: () {
+                                  _updateProduct(
+                                      doc.id,
+                                      product_details["Product_name"],
+                                      product_details["Product_discription"]);
+                                },
+                                icon: Icon(
+                                  CupertinoIcons.pen,
+                                  color: Colors.black,
+                                )),
+                            IconButton(
+                                onPressed: () {
+                                  Delete_product(doc.id);
+                                },
+                                icon: Icon(
+                                  CupertinoIcons.delete,
+                                  color: Colors.black,
+                                ))
+                          ]),
+                        ),
                       ),
                     ),
                   ),
