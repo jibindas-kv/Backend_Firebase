@@ -34,18 +34,19 @@ class _Task_detailState extends State<Task_detail> {
         return Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: false,
-            backgroundColor: Colors.pink,
+            backgroundColor: Colors.black,
+            toolbarHeight: 70,
             title: Center(
               child: Text(
                 Task!["Task_name"],
                 style: TextStyle(
-                    color: Colors.white, fontWeight: FontWeight.w900, fontSize: 30),
+                    color: Colors.white, fontWeight: FontWeight.w900, fontSize: 35),
               ),
             ),
           ),
           backgroundColor: Colors.black,
           body: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.only(left: 10,right: 10),
             child: Column(
               children: [
                 SizedBox(
@@ -55,7 +56,7 @@ class _Task_detailState extends State<Task_detail> {
                       Padding(
                         padding: const EdgeInsets.all(4.0),
                         child: Card(
-                          color: Colors.pink.shade300,
+                          color: Colors.white,
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Column(children: [
@@ -65,7 +66,7 @@ class _Task_detailState extends State<Task_detail> {
                                   children: [
                                     Text("Task Create Date : ",
                                         style: TextStyle(
-                                            color: Colors.white70,
+                                            color: Colors.pink,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 20)),
                                     Text("${Task!["Creation_date"]}",
@@ -83,7 +84,7 @@ class _Task_detailState extends State<Task_detail> {
                                   children: [
                                     Text("About The Task : ",
                                         style: TextStyle(
-                                            color: Colors.white70,
+                                            color: Colors.pink,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 20)),
                                     Text("${Task!["Task_discription"]}",
@@ -101,7 +102,7 @@ class _Task_detailState extends State<Task_detail> {
                                   children: [
                                     Text("Task Duriation : ",
                                         style: TextStyle(
-                                            color: Colors.white70,
+                                            color: Colors.pink,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 20)),
                                     Text("${Task!["Task_duriation"]}",
@@ -119,7 +120,7 @@ class _Task_detailState extends State<Task_detail> {
                                   children: [
                                     Text("Last Date : ",
                                         style: TextStyle(
-                                            color: Colors.white70,
+                                            color: Colors.pink,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 20)),
                                     Text("${Task!["Last_date"]}",

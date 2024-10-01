@@ -226,7 +226,7 @@ class _HomeState extends State<Home> {
                               child: Wrap(
                                 children: [
                                   Text(
-                                    "${Task_details["Creation_date"] ?? ""}",
+                                    "Creation Date : ${Task_details["Creation_date"] ?? ""}",
                                     style: TextStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold,
@@ -235,12 +235,26 @@ class _HomeState extends State<Home> {
                                 ],
                               ),
                             ),
+                            // Align(
+                            //   alignment: Alignment.centerLeft,
+                            //   child: Wrap(
+                            //     children: [
+                            //       Text(
+                            //         "${Task_details["Task_discription"] ?? ""}",
+                            //         style: TextStyle(
+                            //             fontSize: 15,
+                            //             fontWeight: FontWeight.bold,
+                            //             color: Colors.black),
+                            //       ),
+                            //     ],
+                            //   ),
+                            // ),
                             Align(
                               alignment: Alignment.centerLeft,
                               child: Wrap(
                                 children: [
                                   Text(
-                                    "${Task_details["Task_discription"] ?? ""}",
+                                    "Duriation : ${Task_details["Task_duriation"] ?? ""}",
                                     style: TextStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold,
@@ -249,34 +263,20 @@ class _HomeState extends State<Home> {
                                 ],
                               ),
                             ),
-                            Align(
-                              alignment: Alignment.centerLeft,
-                              child: Wrap(
-                                children: [
-                                  Text(
-                                    "${Task_details["Task_duriation"] ?? ""}",
-                                    style: TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Align(
-                              alignment: Alignment.centerLeft,
-                              child: Wrap(
-                                children: [
-                                  Text(
-                                    "${Task_details["Last_date"] ?? ""}",
-                                    style: TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black),
-                                  ),
-                                ],
-                              ),
-                            ),
+                            // Align(
+                            //   alignment: Alignment.centerLeft,
+                            //   child: Wrap(
+                            //     children: [
+                            //       Text(
+                            //         "${Task_details["Last_date"] ?? ""}",
+                            //         style: TextStyle(
+                            //             fontSize: 15,
+                            //             fontWeight: FontWeight.bold,
+                            //             color: Colors.black),
+                            //       ),
+                            //     ],
+                            //   ),
+                            // ),
                             SizedBox(
                               height: 10,
                             ),

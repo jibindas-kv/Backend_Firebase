@@ -15,6 +15,7 @@ class Task_Add extends StatefulWidget {
 }
 
 class _Task_AddState extends State<Task_Add> {
+  String _selectedValue = 'Option 1';
 
 
 
@@ -73,7 +74,7 @@ class _Task_AddState extends State<Task_Add> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 10),
+              padding: const EdgeInsets.only(top: 5),
               child: Text(
                 " Task",
                 style: TextStyle(
@@ -193,34 +194,37 @@ class _Task_AddState extends State<Task_Add> {
                       borderRadius: BorderRadius.circular(3),
                       color: Colors.purple.shade100,
                     ),
-                    child: DropdownButton<String>(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 13),
+                      child: DropdownButton<String>(
 
-                      dropdownColor: Colors.purple.shade100,
-                      value: Selected_item,
-                      icon: Padding(
-                        padding: const EdgeInsets.only(left: 186),
-                        child: Icon(
-                          Icons.arrow_drop_down,
-                          size: 40,
-                        ),
-                      ),
-                      items: _Duriation.map((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(
-                            value,
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
+                        dropdownColor: Colors.purple.shade100,
+                        value: Selected_item,
+                        icon: Padding(
+                          padding: const EdgeInsets.only(left: 186),
+                          child: Icon(
+                            Icons.arrow_drop_down,
+                            size: 40,
                           ),
-                        );
-                      }).toList(),
-                      onChanged: (String? newValue) {
-                        setState(() {
-                          Selected_item = newValue!;
-                        });
-                      },
+                        ),
+                        items: _Duriation.map((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(
+                              value,
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          );
+                        }).toList(),
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            Selected_item = newValue!;
+                          });
+                        },
+                      ),
                     ),
                   ),
                   SizedBox(height: 15,),
@@ -264,6 +268,82 @@ class _Task_AddState extends State<Task_Add> {
 
                       Lastdate_ctrl.text = convertedDate;
                     },
+                  ),
+                  SizedBox(height: 15,),
+                  Container(
+                    height: 100,
+                    width: 370,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(3),
+                      color: Colors.purple.shade100,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 13),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                " Type Of Task",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Row(
+                                children: [
+                                  Radio<String>(
+                                    value: 'Personal',
+                                    groupValue: _selectedValue,
+                                    onChanged: (String? value) {
+                                      setState(() {
+                                        _selectedValue = value!;
+                                      });
+                                    },
+                                  ),
+                                  Text('Personal'),
+                                ],
+                              ),
+                              SizedBox(width: 10), // Space between containers
+                              Row(
+                                children: [
+                                  Radio<String>(
+                                    value: 'Work',
+                                    groupValue: _selectedValue,
+                                    onChanged: (String? value) {
+                                      setState(() {
+                                        _selectedValue = value!;
+                                      });
+                                    },
+                                  ),
+                                  Text('Work'),
+                                ],
+                              ),
+                              SizedBox(width: 10),
+                              Row(
+                                children: [
+                                  Radio<String>(
+                                    value: 'Others',
+                                    groupValue: _selectedValue,
+                                    onChanged: (String? value) {
+                                      setState(() {
+                                        _selectedValue = value!;
+                                      });
+                                    },
+                                  ),
+                                  Text('Others'),
+                                ],
+                              ),
+                              SizedBox(width: 10),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                   SizedBox(height: 25,),
                   AnimatedButton(
