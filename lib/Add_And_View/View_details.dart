@@ -11,6 +11,8 @@ class View_details extends StatefulWidget {
 }
 
 class _View_detailsState extends State<View_details> {
+
+
   Future<void> Getbyid() async {
     Product = await FirebaseFirestore.instance
         .collection("Product Details")

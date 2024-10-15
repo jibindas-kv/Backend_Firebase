@@ -15,7 +15,7 @@ class Task_Add extends StatefulWidget {
 }
 
 class _Task_AddState extends State<Task_Add> {
-  String _selectedValue = 'Option 1';
+  String _selectedType = 'Personal';
 
 
 
@@ -45,6 +45,7 @@ class _Task_AddState extends State<Task_Add> {
       "Task_discription":Discription_ctrl.text,
       "Task_duriation":Selected_item,
       "Last_date":Lastdate_ctrl.text,
+      "Task_type":_selectedType,
 
     });
     print("Data Added Successfully/////////////////");
@@ -271,7 +272,7 @@ class _Task_AddState extends State<Task_Add> {
                   ),
                   SizedBox(height: 15,),
                   Container(
-                    height: 100,
+                    height: 85,
                     width: 370,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(3),
@@ -281,8 +282,10 @@ class _Task_AddState extends State<Task_Add> {
                       padding: const EdgeInsets.only(left: 13),
                       child: Column(
                         children: [
+                          SizedBox(height: 5,),
                           Row(
                             children: [
+
                               Text(
                                 " Type Of Task",
                                 style: TextStyle(
@@ -297,11 +300,12 @@ class _Task_AddState extends State<Task_Add> {
                               Row(
                                 children: [
                                   Radio<String>(
+                                    activeColor: Colors.purple,
                                     value: 'Personal',
-                                    groupValue: _selectedValue,
+                                    groupValue: _selectedType,
                                     onChanged: (String? value) {
                                       setState(() {
-                                        _selectedValue = value!;
+                                        _selectedType = value!;
                                       });
                                     },
                                   ),
@@ -313,10 +317,10 @@ class _Task_AddState extends State<Task_Add> {
                                 children: [
                                   Radio<String>(
                                     value: 'Work',
-                                    groupValue: _selectedValue,
+                                    groupValue: _selectedType,
                                     onChanged: (String? value) {
                                       setState(() {
-                                        _selectedValue = value!;
+                                        _selectedType = value!;
                                       });
                                     },
                                   ),
@@ -328,10 +332,10 @@ class _Task_AddState extends State<Task_Add> {
                                 children: [
                                   Radio<String>(
                                     value: 'Others',
-                                    groupValue: _selectedValue,
+                                    groupValue: _selectedType,
                                     onChanged: (String? value) {
                                       setState(() {
-                                        _selectedValue = value!;
+                                        _selectedType = value!;
                                       });
                                     },
                                   ),

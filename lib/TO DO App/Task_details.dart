@@ -131,6 +131,24 @@ class _Task_detailState extends State<Task_detail> {
                                   ],
                                 ),
                               ),
+                              SizedBox(height: 15,),
+                              Align(
+                                alignment: Alignment.centerLeft,
+                                child: Wrap(
+                                  children: [
+                                    Text("Type Of Task : ",
+                                        style: TextStyle(
+                                            color: Colors.pink,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 20)),
+                                    Text("${Task!["Task_type"]}",
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 20)),
+                                  ],
+                                ),
+                              ),
                             ],),
                           )
                         ),

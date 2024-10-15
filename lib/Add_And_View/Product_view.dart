@@ -131,13 +131,12 @@ class _Product_viewState extends State<Product_view> {
                   padding: const EdgeInsets.only(top: 10, left: 15, right: 15),
                   child: InkWell(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) {
-                        return View_details(
-                          id:doc.id
-                        );
-                      },));
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return View_details(id: doc.id);
+                        },
+                      ));
                     },
-
                     child: Card(
                       child: Container(
                         height: 75,
@@ -146,7 +145,10 @@ class _Product_viewState extends State<Product_view> {
                           gradient: LinearGradient(
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
-                            colors: [Colors.blue.shade400, Colors.green.shade400],
+                            colors: [
+                              Colors.blue.shade400,
+                              Colors.green.shade400
+                            ],
                           ),
                         ),
                         child: ListTile(
